@@ -3,53 +3,65 @@ package com.techelevator;
 public class Lecture {
 
 	public static void main(String[] args) {
-		
+
 		/*
 		1. Create a variable to hold an int and call it numberOfExercises.
 			Then set it to 26.
 		*/
 
-		//System.out.println(numberOfExercises);
+		int numberOfExercises = 26;
+		System.out.println(numberOfExercises);
 
 		/*
 		2. Create a variable to hold a double and call it half.
 			Set it to 0.5.
 		*/
 
-		//System.out.println(half);
+		double half = 0.5;
+		System.out.println(half);
+
 
 		/*
 		3. Create a variable to hold a String and call it name.
 			Set it to "TechElevator".
 		*/
 
-		//System.out.println(name);
+		String name = "TechElevator";
+		System.out.println(name);
 
 		/*
 		4. Create a variable called seasonsOfFirefly and set it to 1.
 		*/
 
-		//System.out.println(seasonsOfFirefly);
+		int seasonsOfFirefly = 1;
+		System.out.println(seasonsOfFirefly);
 
 		/*
 		5. Create a variable called myFavoriteLanguage and set it to "Java".
 		*/
 
-		//System.out.println(myFavoriteLanguage);
+		String myFavoriteLanguage = "Java";
+		System.out.println(myFavoriteLanguage);
 
 		/*
 		6. Create a variable called pi and set it to 3.1416.
 		*/
 
-		//System.out.println(pi);
+		double pi = 3.1416;
+		System.out.println(pi);
 
 		/*
 		7. Create and set a variable that holds your name.
 		*/
 
+		String variable = "Tarek";
+		System.out.println(variable);
+
 		/*
 		8. Create and set a variable that holds the number of buttons on your mouse.
 		*/
+
+		
 
 		/*
 		9. Create and set a variable that holds the percentage of battery left on
