@@ -91,9 +91,9 @@ public class Exercises {
 	 */
 	public int[] reverse3(int[] nums) {
 		int firstDigit = nums[0];
-		int lastDigit = nums[2];
+		int lastDigit = nums[nums.length - 1];
 		nums[0] = lastDigit;
-		nums[2] = firstDigit;
+		nums[nums.length - 1] = firstDigit;
 		return nums;
 	}
 
