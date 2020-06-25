@@ -6,7 +6,8 @@ public class Lecture {
     it so that it returns something other than a 1.
     */
     public int returnNotOne() {
-        return 1;
+
+        return 4;
     }
 
     /*
@@ -14,6 +15,7 @@ public class Lecture {
     it so that it returns something other than a 0.5.
     */
     public double returnNotHalf() {
+
         return 0.5;
     }
 
@@ -21,6 +23,7 @@ public class Lecture {
     3. This method needs to return a String. Fix it to return a valid String.
     */
     public String returnName() {
+
         return null;
     }
 
@@ -28,6 +31,7 @@ public class Lecture {
     4. This method currently returns an int. Change it so that it returns a double.
     */
     public int returnDoubleOfTwo() {
+
         return 2;
     }
 
