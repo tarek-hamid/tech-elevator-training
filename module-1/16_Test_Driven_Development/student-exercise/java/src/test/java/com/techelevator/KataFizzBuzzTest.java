@@ -44,8 +44,9 @@ public class KataFizzBuzzTest {
         assertEquals("", test.fizzBuzz(350));
     }
 
-
-
-
+    @Test
+    public void divisibleOrContainsThree() {
+        assertEquals("", test.fizzBuzz(13));
+    }
 
 }
