@@ -8,16 +8,16 @@ public class KataFizzBuzz {
     }
 
     public String fizzBuzz(int num){
-        if (num % 3 == 0 && num % 5 == 0){
+        if (num > 100 || num < 0){
+            return "";
+        } else if (num % 3 == 0 && num % 5 == 0){
             return "FizzBuzz.";
         } else if (num % 3 == 0){
             return "Fizz.";
         } else if (num % 5 == 0) {
             return "Buzz.";
-        } else if (num < 100) {
-            return Integer.toString(num);
         }
-        return null;
+        return Integer.toString(num);
     }
 
 }
