@@ -8,7 +8,7 @@ public class KataFizzBuzz {
     }
 
     public String fizzBuzz(int num){
-        if (num > 100 || num < 0){
+        if (num > 100 || num == 0){
             return "";
         } else if ((num % 3 == 0 && num % 5 == 0) || (Integer.toString(num)).contains("3") && Integer.toString(num).contains("5")){
             return "FizzBuzz.";

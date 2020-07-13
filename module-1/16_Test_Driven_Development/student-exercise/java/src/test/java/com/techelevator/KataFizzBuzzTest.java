@@ -31,7 +31,7 @@ public class KataFizzBuzzTest {
 
     @Test
     public void convertToStringOneToHundred() {
-        assertEquals("83", test.fizzBuzz(83));
+        assertEquals("77", test.fizzBuzz(77));
     }
 
     @Test
@@ -41,12 +41,19 @@ public class KataFizzBuzzTest {
 
     @Test
     public void divisibleOrContainsThreeAndFive() {
-        assertEquals("", test.fizzBuzz(350));
+        assertEquals("FizzBuzz.", test.fizzBuzz(53));
     }
 
     @Test
     public void divisibleOrContainsThree() {
-        assertEquals("", test.fizzBuzz(13));
+        assertEquals("Fizz.", test.fizzBuzz(13));
     }
+
+    @Test
+    public void divisibleOrContainsFive() {
+        assertEquals("Buzz.", test.fizzBuzz(51));
+    }
+
+    
 
 }
