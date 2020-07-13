@@ -16,6 +16,7 @@ public class KataPotterTest {
 
     @Test
     public void eachBookCostsEight() {
-        assertEquals(8, test.getCost(new int[]{1, 1}));
+        assertEquals(16, test.getCost(new int[]{1, 1}));
+        assertEquals(24, test.getCost(new int[]{2, 1}));
     }
 }

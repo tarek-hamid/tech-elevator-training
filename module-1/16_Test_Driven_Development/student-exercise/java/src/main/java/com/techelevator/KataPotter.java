@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class KataPotter {
 
-    // Methodology : evaluate all possibilities and store in Map
+    // Methodology : evaluate all possibilities and store in Map the best one
 
     private int[] books;
 
@@ -14,7 +14,11 @@ public class KataPotter {
 
     public int getCost(int[] books){
         this.books = books;
-        return 0;
+        int cost = 0;
+        for (Integer book: books){
+            cost += (book * 8);
+        }
+        return cost;
     }
 
 }
