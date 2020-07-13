@@ -12,10 +12,10 @@ public class KataFizzBuzz {
             return "";
         } else if ((num % 3 == 0 && num % 5 == 0) || (Integer.toString(num)).contains("3") && Integer.toString(num).contains("5")){
             return "FizzBuzz.";
-        } else if ((num % 3 == 0) || (Integer.toString(num)).contains("3")){
-            return "Fizz.";
         } else if (num % 5 == 0 || (Integer.toString(num)).contains("5")) {
             return "Buzz.";
+        } else if ((num % 3 == 0) || (Integer.toString(num)).contains("3")){
+            return "Fizz.";
         }
         return Integer.toString(num);
     }
