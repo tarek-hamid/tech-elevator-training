@@ -19,4 +19,11 @@ public class KataFizzBuzzTest {
         assertEquals("Fizz.", test.fizzBuzz(9));
     }
 
+    @Test
+    public void isDivisibleByFive() {
+        assertEquals("Buzz.", test.fizzBuzz(10));
+    }
+
+
+
 }
