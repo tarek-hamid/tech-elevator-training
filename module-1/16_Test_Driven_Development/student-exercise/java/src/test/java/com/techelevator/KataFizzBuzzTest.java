@@ -24,6 +24,13 @@ public class KataFizzBuzzTest {
         assertEquals("Buzz.", test.fizzBuzz(10));
     }
 
+    @Test
+    public void isDivisibleByFiveAndThree() {
+        assertEquals("FizzBuzz.", test.fizzBuzz(15));
+    }
+
+
+
 
 
 }
