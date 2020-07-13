@@ -14,6 +14,8 @@ public class KataFizzBuzz {
             return "Fizz.";
         } else if (num % 5 == 0) {
             return "Buzz.";
+        } else if (num < 100) {
+            return Integer.toString(num);
         }
         return null;
     }

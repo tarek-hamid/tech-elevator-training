@@ -29,8 +29,10 @@ public class KataFizzBuzzTest {
         assertEquals("FizzBuzz.", test.fizzBuzz(15));
     }
 
-
-
+    @Test
+    public void convertToStringOneToHundred() {
+        assertEquals("83", test.fizzBuzz(83));
+    }
 
 
 }
