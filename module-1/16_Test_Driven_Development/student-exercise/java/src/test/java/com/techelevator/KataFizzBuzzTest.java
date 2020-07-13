@@ -34,5 +34,11 @@ public class KataFizzBuzzTest {
         assertEquals("83", test.fizzBuzz(83));
     }
 
+    @Test
+    public void convertToEmptyString() {
+        assertEquals("", test.fizzBuzz(150));
+    }
+
+
 
 }
