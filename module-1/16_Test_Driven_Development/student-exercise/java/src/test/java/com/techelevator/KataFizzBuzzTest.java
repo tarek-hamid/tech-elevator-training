@@ -51,9 +51,7 @@ public class KataFizzBuzzTest {
 
     @Test
     public void divisibleOrContainsFive() {
-        assertEquals("Buzz.", test.fizzBuzz(51));
+        assertEquals("Buzz.", test.fizzBuzz(55));
     }
-
-    
 
 }
