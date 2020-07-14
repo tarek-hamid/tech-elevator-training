@@ -15,8 +15,28 @@ public class KataPotterTest {
     }
 
     @Test
-    public void eachBookCostsEight() {
-        assertEquals(16, test.getCost(new int[]{1, 1}));
-        assertEquals(24, test.getCost(new int[]{2, 1}));
+    public void totalPriceWithOneSetOfFive() {
+        assertEquals("30.00", test.getCost(new int[]{1, 1, 1, 1, 1}));
+    }
+
+    @Test
+    public void totalPriceWithOneSetOfFour() {
+        assertEquals("25.60", test.getCost(new int[]{1, 1, 1, 1, 0}));
+    }
+    
+
+    @Test
+    public void totalPriceWithOneSetOfThree() {
+        assertEquals("20.40", test.getCost(new int[]{1, 1, 1, 0, 0}));
+    }
+
+    @Test
+    public void totalPriceWithOneSetOfTwo() {
+        assertEquals("14.40", test.getCost(new int[]{1, 1, 0, 0, 0}));
+    }
+
+    @Test
+    public void totalPriceWithOneSetOfOne() {
+        assertEquals("8.00", test.getCost(new int[]{1, 0, 0, 0, 0}));
     }
 }
