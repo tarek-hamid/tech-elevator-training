@@ -20,7 +20,6 @@ public class KataPotter {
         double runningCostFiveSetMax = 0;
         double runningCostFourSetMax = 0;
         int bookCount = 0;
-        int bookCount2 = 0;
 
 
         // For loop using maximum set 5
@@ -55,22 +54,22 @@ public class KataPotter {
         while (!Arrays.equals(tempArray2, noMoreBooks)) {
             for (int i = 0; i < tempArray2.length; i++) {
                 if (tempArray2[i] != 0) {
-                    bookCount2++;
+                    bookCount++;
                     tempArray2[i]--;
                 }
-                if (bookCount2 == 4) {
+                if (bookCount == 4) {
                     runningCostFourSetMax += (8 * 4 * 0.80);
-                    bookCount2 = 0;
+                    bookCount = 0;
                 }
             }
         }
-            if (bookCount2 == 3) {
+            if (bookCount == 3) {
                 runningCostFourSetMax += (8 * 3 * 0.90);
                 bookCount = 0;
-            } else if (bookCount2 == 2) {
+            } else if (bookCount == 2) {
                 runningCostFourSetMax += (8 * 2 * 0.95);
                 bookCount = 0;
-            } else if (bookCount2 == 1) {
+            } else if (bookCount == 1) {
                 runningCostFourSetMax += 8;
                 bookCount = 0;
             }
