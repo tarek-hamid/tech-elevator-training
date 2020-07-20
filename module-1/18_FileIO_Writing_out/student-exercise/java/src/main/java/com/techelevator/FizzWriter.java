@@ -30,5 +30,4 @@ public class FizzWriter {
 			System.exit(1);
 		}
 	}
-
 }
