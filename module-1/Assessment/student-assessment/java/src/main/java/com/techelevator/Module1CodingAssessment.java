@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Module1CodingAssessment {
@@ -19,7 +21,7 @@ public class Module1CodingAssessment {
 
 		// Part 2: Reading csv file and printing out total balance.
 		File dataFile = new File("data-files/TellerInput.csv");
-
+		List<TellerMachine> listOfATMs = new ArrayList<TellerMachine>();
 		BigDecimal totalBalance = new BigDecimal("0.00");
 		try (Scanner dataInput = new Scanner(dataFile)) {
 			while(dataInput.hasNext()){
@@ -27,6 +29,7 @@ public class Module1CodingAssessment {
 				String[] parsedInput = lineOfInput.split(",");
 				TellerMachine newInput = new TellerMachine(parsedInput[0], new BigDecimal(parsedInput[1]),
 						new BigDecimal(parsedInput[2]));
+				listOfATMs.add(newInput);
 				totalBalance = totalBalance.add(newInput.getBalance());
 			}
 		} catch (FileNotFoundException ex){
