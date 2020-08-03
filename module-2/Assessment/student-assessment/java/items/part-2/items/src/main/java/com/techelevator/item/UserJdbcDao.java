@@ -22,13 +22,23 @@ public class UserJdbcDao implements UserDao {
 	@Override
 	public void save(User newUser) {
 		// Implement this method to save user to database
+		String sqlSaveUser = "INSERT INTO users(first_name, last_name, email, role, created)\n" +
+				"VALUES(?, ?, ?,? ,?)";
+		jdbcTemplate.update(sqlSaveUser, newUser.getFirstName(), newUser.getLastName(),
+				newUser.getEmail(), newUser.getRole(), Date.valueOf(newUser.getCreated()));
+
 	}
 
 	@Override
 	public List<User> getAllUsers() {
-		// Implement this method to pull in all users from database
-
-		return null;
+		List<User> userList = new ArrayList<User>();
+		String sqlGetAllUsers = "SELECT * FROM users";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllUsers);
+		while(results.next()){
+			User user = mapRowToUser(results);
+			userList.add(user);
+		}
+		return userList;
 	}
 
 	private User mapRowToUser(SqlRowSet results) {
