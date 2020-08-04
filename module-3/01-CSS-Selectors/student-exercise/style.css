@@ -1,5 +1,5 @@
 :root {
-    --top-row-height: 120px;
+    --top-row-height: 150px;
     --gutter: 20px;
     --blue: #00adee;
     --light-blue: rgba(0, 173, 238, 0.4);
@@ -13,5 +13,25 @@
     box-sizing: border-box;
     font-family: Tahoma, Verdana, Segoe, sans-serif;
   }
+
   
+  body{
+    display: grid;
+    grid-template-columns: 200px 500px; 
+    grid-gap: 200px;
+  }
+
+  h2{
+    color:#8CC36F;
+  }
+
+  nav {
+    color: #00ADEE;
+    text-align: center;
+    font-size: 200%;
+  }
+  
+  a {
+    text-decoration: #00ADEE;
+  }
   
