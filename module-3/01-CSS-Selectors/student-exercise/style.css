@@ -13,25 +13,94 @@
     box-sizing: border-box;
     font-family: Tahoma, Verdana, Segoe, sans-serif;
   }
-
   
-  body{
-    display: grid;
-    grid-template-columns: 200px 500px; 
-    grid-gap: 200px;
-  }
+html {
+  font-size: 16px;
+}
 
-  h2{
-    color:#8CC36F;
-  }
+body {
+    background-color: var(--bg-color);
+}
 
-  nav {
-    color: #00ADEE;
-    text-align: center;
-    font-size: 200%;
-  }
-  
-  a {
-    text-decoration: #00ADEE;
-  }
-  
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p.subheading,
+h2 {
+  font-size: 1.5rem;
+  color: var(--subheading);
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+aside {
+  position: fixed;
+  width: 200px;
+}
+
+aside img {
+  display: block;
+  margin: 0 auto;
+}
+
+main {
+  margin-left: 200px;
+}
+
+/* Top Row */
+aside img,
+main header {
+  height: var(--top-row-height);
+}
+
+main header p.subheading {
+  font-size: 2em;
+}
+
+main > img {
+  display: block;
+  width: 100%;
+}
+
+main section {
+  margin-top: var(--gutter);
+}
+
+main section div {
+  display: inline-block;
+  padding-right: 20px;
+  width: 33%;
+}
+
+main section div:not(:first-child) {
+  padding-left: 20px;
+}
+
+main section div:not(:last-child) {
+  border-right: 1px solid var(--light-green);
+}
+
+main section h2 {
+  color: var(--green);
+}
+
+main section h2 i {
+  margin-right: 10px;
+} 
