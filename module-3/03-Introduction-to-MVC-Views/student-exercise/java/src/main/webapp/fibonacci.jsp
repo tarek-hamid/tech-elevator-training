@@ -31,8 +31,22 @@
 	</ul>
 </nav>
 
-<%--
-	REPLACE THIS COMMENT WITH YOUR UNORDERED LIST...
- --%>
-
+<!DOCTYPE>
+<html>
+	<body>
+		<ul>
+			<c:set var="firstDigit" value="0"/>
+			<c:set var = "secondDigit" value = "1" />
+			<c:set var="result" value = "0"/>
+			<c:forEach begin= "1" end = "${param.max}" var = "i">
+				<c:set var = "result" value = "${firstDigit + secondDigit}" />
+				<c:if test ="${result < param.max}">
+					<li> "${result}" </li>
+					<c:set var = "firstDigit" value = "${secondDigit}" />
+					<c:set var = "secondDigit" value = "${result}" />
+				</c:if>
+			</c:forEach>
+		</ul>
+	</body>
+</html>
 <c:import url="common/footer.jsp"></c:import>

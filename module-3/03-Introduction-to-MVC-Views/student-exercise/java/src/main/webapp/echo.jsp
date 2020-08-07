@@ -37,8 +37,16 @@
 	</ul>
 </nav>
 
-<%--
-	REPLACE THIS COMMENT WITH YOUR UNORDERED LIST...
- --%>
+<!DOCTYPE>
+<html>
+	<body>
+		<ul>
+			<c:forEach begin = "1" end = "${param.count}" var = "count">
+				<li style="font-size: ${param.count - count +1}px;"><c:out value="${param.word}!"/></li>
+			</c:forEach>
+		</ul>
+	</body>
+
+</html>
 
 <c:import url="common/footer.jsp"></c:import>
