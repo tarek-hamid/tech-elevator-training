@@ -21,28 +21,73 @@
 		 when you load the page up. -->
 
 		<!-- Standard Product -->
-		<div class="tile  ">
-			<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-			<a class="product-image" href="#"> 
-				<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
-			</a>
-			<div class="details">
-				<p class="name">
-					<a href="#">Grey Sofa</a>
-				</p>
+		<c:forEach var="product" items="${products}">
+			<div class="tile  ">
+				<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
 
-				<!-- .filled will make the star solid -->
-				<div class="rating">
-					<span class="filled">&#9734;</span> 
-					<span>&#9734;</span> 
-					<span>&#9734;</span>
-					<span>&#9734;</span> 
-					<span>&#9734;</span>
+				<a class="product-image" href="#">
+					<img src="<c:url value="/images/product-images/${product.imageName}" />" />
+				</a>
+				<div class="details">
+					<p class="name">
+						<a href="#">${product.name}</a>
+					</p>
+
+					<!-- .filled will make the star solid -->
+					<c:choose>
+						<c:when test ="${product.averageRating < 1.5}">
+							<div class="rating">
+								<span class="filled">&#9734;</span>
+								<span>&#9734;</span>
+								<span>&#9734;</span>
+								<span>&#9734;</span>
+								<span>&#9734;</span>
+							</div>
+						</c:when>
+						<c:when test ="${product.averageRating >= 1.5 && product.averageRating < 2.5}">
+							<div class="rating">
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span>&#9734;</span>
+								<span>&#9734;</span>
+								<span>&#9734;</span>
+							</div>
+						</c:when>
+						<c:when test ="${product.averageRating >= 2.5 && product.averageRating < 3.5}">
+							<div class="rating">
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span>&#9734;</span>
+								<span>&#9734;</span>
+							</div>
+						</c:when>
+						<c:when test ="${product.averageRating >= 3.5 && product.averageRating < 4.5}">
+							<div class="rating">
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span>&#9734;</span>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="rating">
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+								<span class="filled">&#9734;</span>
+							</div>
+						</c:otherwise>
+					</c:choose>
+
+
+					<p class="price">${product.price}</p>
 				</div>
-
-				<p class="price">$939.00</p>
 			</div>
-		</div>
+		</c:forEach>
+
 
 		<!-- Add the .top-seller class if the product is considered a Top Seller -->
 		<div class="tile top-seller ">
