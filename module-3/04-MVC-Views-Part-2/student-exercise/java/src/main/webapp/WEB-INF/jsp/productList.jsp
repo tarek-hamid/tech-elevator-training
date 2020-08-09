@@ -99,6 +99,7 @@
 							<span class="filled">&#9734;</span>
 						</div>
 					</c:if>
+					<br />
 					<c:if test ="${product.remainingStock > 0 && product.remainingStock <= 5}">
 						<span class="product-alert">Only ${product.remainingStock} left!</span>
 					</c:if>

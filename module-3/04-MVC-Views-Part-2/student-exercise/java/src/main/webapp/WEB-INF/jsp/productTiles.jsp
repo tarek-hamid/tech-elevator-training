@@ -23,11 +23,15 @@
 		<!-- Standard Product -->
 		<c:forEach var="product" items="${products}">
 			<c:choose>
-				<c:when test="${product.topSeller == true}">
+				<c:when test="${product.topSeller}">
 					<!-- Add the .top-seller class if the product is considered a Top Seller -->
-					<div class="tile top-seller ">
+					<div class="tile top-seller ${product.remainingStock == 0 ? 'sold-out': 'tile top-seller'}">
+						<c:if test= "${product.remainingStock == 0}">
+								<span class="banner">Sold Out</span>
+						</c:if>
+
 						<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-						<a class="product-image" href="#">
+						<a class="product-image" href="detail?id=${product.id}">
 							<img src="<c:url value="/images/product-images/${product.imageName}" />" />
 						</a>
 						<div class="details">
@@ -36,18 +40,53 @@
 							</p>
 
 							<!-- .filled will make the star solid -->
-							<div class="rating">
-								<span class="filled">&#9734;</span>
-								<span class="filled">&#9734;</span>
-								<span class="filled">&#9734;</span>
-								<span class="filled">&#9734;</span>
-								<span>&#9734;</span>
-							</div>
-
-							<!-- Add the Top Seller <br/> and product alert if the product is considered a Top Seller -->
+							<c:if test ="${product.averageRating < 1.5}">
+								<div class="rating">
+									<span class="filled">&#9734;</span>
+									<span>&#9734;</span>
+									<span>&#9734;</span>
+									<span>&#9734;</span>
+									<span>&#9734;</span>
+								</div>
+							</c:if>
+							<c:if test ="${product.averageRating >= 1.5 && product.averageRating < 2.5}">
+								<div class="rating">
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span>&#9734;</span>
+									<span>&#9734;</span>
+									<span>&#9734;</span>
+								</div>
+							</c:if>
+							<c:if test ="${product.averageRating >= 2.5 && product.averageRating < 3.5}">
+								<div class="rating">
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span>&#9734;</span>
+									<span>&#9734;</span>
+								</div>
+							</c:if>
+							<c:if test ="${product.averageRating >= 3.5 && product.averageRating < 4.5}">
+								<div class="rating">
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span>&#9734;</span>
+								</div>
+							</c:if>
+							<c:if test ="${product.averageRating >= 4.5}">
+								<div class="rating">
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+									<span class="filled">&#9734;</span>
+								</div>
+							</c:if>
 							<br />
 							<p class="product-alert">Top Seller</p>
-							<!-- Add the X remaining product alert if the remaining quantity is greater than 0, but less than or equal to 5 -->
 							<c:if test ="${product.remainingStock > 0 && product.remainingStock <= 5}">
 								<span class="product-alert">Only ${product.remainingStock} left!</span>
 							</c:if>
@@ -56,10 +95,17 @@
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="tile  ">
-						<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
+					<div class="tile ${product.remainingStock == 0 ? 'sold-out': 'tile'}">
+						<c:choose>
+							<c:when test= "${product.remainingStock == 0}">
+								<span class="banner">Sold Out</span>
+							</c:when>
+							<c:when test="${product.topSeller}">
+								<span class="banner top-seller">Top Seller!</span>
+							</c:when>
+						</c:choose>
 
-						<a class="product-image" href="#">
+						<a class="product-image" href="detail?id=${product.id}">
 							<img src="<c:url value="/images/product-images/${product.imageName}" />" />
 						</a>
 						<div class="details">
@@ -115,46 +161,14 @@
 									</div>
 								</c:otherwise>
 							</c:choose>
-
-							<p class="price">${product.price}</p>
 							<c:if test ="${product.remainingStock > 0 && product.remainingStock <= 5}">
 								<span class="product-alert">Only ${product.remainingStock} left!</span>
 							</c:if>
+							<p class="price">${product.price}</p>
+
 						</div>
 					</div>
 				</c:otherwise>
 			</c:choose>
 		</c:forEach>
-
-<%--<c:when test="${product.remainingStock == 0}">--%>
-<%--	<!-- Add the .sold-out class if the Remaining Stock is 0 -->--%>
-<%--	<div class="tile  sold-out">--%>
-<%--		<!-- Add the Sold Out banner if the Remaining Stock is 0 -->--%>
-<%--		<span class="banner">Sold Out</span>--%>
-
-<%--		<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->--%>
-<%--		<a class="product-image" href="#">--%>
-<%--			<img src="<c:url value="/images/product-images/${product.imageName}" />" />--%>
-<%--		</a>--%>
-<%--		<div class="details">--%>
-<%--			<p class="name">--%>
-<%--				<a href="#">${product.name}</a>--%>
-<%--			</p>--%>
-
-<%--			<!-- .filled will make the star solid -->--%>
-<%--			<div class="rating">--%>
-<%--				<span class="filled">&#9734;</span>--%>
-<%--				<span class="filled">&#9734;</span>--%>
-<%--				<span class="filled">&#9734;</span>--%>
-<%--				<span class="filled">&#9734;</span>--%>
-<%--				<span>&#9734;</span>--%>
-<%--			</div>--%>
-
-<%--			<p class="price">${product.price}</p>--%>
-<%--		</div>--%>
-<%--	</div>--%>
-<%--	</div>--%>
-<%--	</div>--%>
-<%--</c:when>--%>
-
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
