@@ -92,7 +92,7 @@
 		<!-- Add the .top-seller class if the product is considered a Top Seller -->
 		<div class="tile top-seller ">
 			<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-			<a class="product-image" href="#"> 
+			<a class="product-image" href="#">
 				<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
 			</a>
 			<div class="details">
@@ -102,9 +102,9 @@
 
 				<!-- .filled will make the star solid -->
 				<div class="rating">
-					<span class="filled">&#9734;</span> 
 					<span class="filled">&#9734;</span>
-					<span class="filled">&#9734;</span> 
+					<span class="filled">&#9734;</span>
+					<span class="filled">&#9734;</span>
 					<span class="filled">&#9734;</span>
 					<span>&#9734;</span>
 				</div>
@@ -124,7 +124,7 @@
 			<span class="banner">Sold Out</span>
 
 			<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-			<a class="product-image" href="#"> 
+			<a class="product-image" href="#">
 				<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
 			</a>
 			<div class="details">
@@ -134,9 +134,9 @@
 
 				<!-- .filled will make the star solid -->
 				<div class="rating">
-					<span class="filled">&#9734;</span> 
 					<span class="filled">&#9734;</span>
-					<span class="filled">&#9734;</span> 
+					<span class="filled">&#9734;</span>
+					<span class="filled">&#9734;</span>
 					<span class="filled">&#9734;</span>
 					<span>&#9734;</span>
 				</div>

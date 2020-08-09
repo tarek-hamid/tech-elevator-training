@@ -21,9 +21,9 @@
 		<div id="sorting-options">
 			<h3>Sort By</h3>
 			<ul>
-				<li><a href="#">Price - Low to High</a></li>
-				<li><a href="#">Price - High to Low</a></li>
-				<li><a href="#">Rating - High to Low</a></li>
+				<li><a href="?sortOrder=PriceLowToHigh">Price - Low to High</a></li>
+				<li><a href="?sortOrder=PriceHighToLow">Price - High to Low</a></li>
+				<li><a href="?sortOrder=RatingHighToLow">Rating - High to Low</a></li>
 			</ul>
 		</div>
 
@@ -36,17 +36,18 @@
 			-->
 			<c:forEach var="product" items="${products}">
 			<!-- Standard Product -->
-			<div class="tile ">
-				<c:if test ="${product.topSeller}">
-					<span class="banner top-seller">Top Seller!</span>
-				</c:if>
-				<c:if test ="${product.remainingStock == 0}">
-					<div class="tile sold-out">
+			<div class="tile ${product.remainingStock == 0 ? 'sold-out': 'tile'}">
+				<c:choose>
+					<c:when test= "${product.remainingStock == 0}">
 						<span class="banner">Sold Out</span>
-					</div>
-				</c:if>
+					</c:when>
+					<c:when test="">
+						<span class="banner top-seller">Top Seller!</span>
+					</c:when>
+				</c:choose>
+
 				<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-				<a class="product-image" href="#"> 
+				<a class="product-image" href="products/detail?id=${product.id}">
 					<img src="<c:url value="/images/product-images/${product.imageName}" />" />
 				</a>
 				<div class="details">
