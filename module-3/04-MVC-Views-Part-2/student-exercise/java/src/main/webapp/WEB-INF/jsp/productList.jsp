@@ -41,7 +41,7 @@
 					<c:when test= "${product.remainingStock == 0}">
 						<span class="banner">Sold Out</span>
 					</c:when>
-					<c:when test="">
+					<c:when test="${product.topSeller}">
 						<span class="banner top-seller">Top Seller!</span>
 					</c:when>
 				</c:choose>
