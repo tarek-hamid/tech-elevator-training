@@ -4,13 +4,21 @@
 
 <%@include file="common/header.jspf"%>
 <!-- Form goes here -->
+<c:url var="formAction" value="/searchActors" />
+<form method="GET" action="${formAction}">
+    <div class="formInputGroup">
+        <label for="searchName">Name:</label>
+        <input type="text" name="searchName" id="searchName" />
+    </div>
+    <input class="formSubmitButton" type="submit" value="Submit" />
+</form>
 <table class="table">
 <tr>
 <th>Name</th>
 </tr>
-<c:forEach items="${actors}" var="actor">
+<c:forEach items="${actorListResults}" var="actor">
 <tr>
-    <!-- What do we print here for each actor? -->
+    <td>${actor.firstName} ${actor.lastName} </td>
 </tr>
 </c:forEach>
 </table>

@@ -1,9 +1,11 @@
 package com.techelevator;
 
+import java.util.List;
 import java.util.Map;
 
 import com.techelevator.dao.ActorDao;
 
+import com.techelevator.dao.model.Actor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,13 +20,15 @@ public class ActorSearchController {
 	private ActorDao actorDao;
 
 	/* What request mapping do we want here */
+	@RequestMapping("/searchActorForm")
 	public String showSearchActorForm() {
-		return null;
+		return "actorList";
 	}
 
-	/* What about here? */
-	public String searchActors(/* What arguments go here to get parameters from the page? */) {
-		/* Call the model and pass values to the jsp */
-		return null;
+	@RequestMapping("/searchActors")
+	public String searchActors(@RequestParam String searchName, ModelMap modelmap) {
+		List<Actor> actors = actorDao.getMatchingActors(searchName);
+		modelmap.put("actorListResults", actors);
+		return "actorList";
 	}
 }

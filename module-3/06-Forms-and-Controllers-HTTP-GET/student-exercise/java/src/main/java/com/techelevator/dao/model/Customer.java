@@ -10,6 +10,13 @@ public class Customer {
 	private String email;
 	private boolean active;
 
+	public Customer(String firstName, String lastName, String email, boolean active) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.active = active;
+	}
+
 	/**
 	 * @return the firstName
 	 */
