@@ -1,19 +1,27 @@
 package com.techelevator;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpSession;
 
+import com.techelevator.model.Review;
+import com.techelevator.model.ReviewDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class HelloController {
 
-	@RequestMapping("/greeting")
-	public String displayGreeting(HttpSession session) {
+	@Autowired
+	ReviewDao reviewDao;
 
-		return "greeting";
+	@RequestMapping("/")
+	public String displayReviews(ModelMap modelMap) {
+		List<Review> reviewList = reviewDao.getAllReviews();
+		modelMap.put("allReviews", reviewList);
+		return "reviews";
 	}
 }
