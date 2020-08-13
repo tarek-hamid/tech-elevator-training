@@ -3,8 +3,8 @@
 <c:set var="pageTitle" value="Home Page"/>
 <%@include file="common/header.jspf" %>
 
-<h2>Home Page</h2>
+<h2>Confirmation</h2>
 
-<p>Please click 'New User' or 'Login' in the header to continue.</p>
+<p>You have successfully registered.</p>
 
 <%@include file="common/footer.jspf" %>
