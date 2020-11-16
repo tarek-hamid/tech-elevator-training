@@ -1,0 +1,129 @@
+body {
+	width: 100%;
+	background-color: #212121;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+		sans-serif;
+}
+
+body, header, nav {
+	margin: 0px;
+}
+
+header {
+	background-color: #0099CC;
+	color: white;
+	padding: 10px 10px;
+}
+
+nav {
+	background-color: #8DC63F;
+	margin-bottom: 20px;
+	padding: 5px;
+	height: 50px;
+}
+
+nav ul {
+	float: left;
+}
+
+nav li {
+	list-style-type: none;
+	color: white;
+	margin-left: 25px;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+	float: left;
+}
+
+nav li a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+nav li a:hover {
+	text-decoration: underline;
+}
+
+section {
+	clear: both;
+	display: block;
+	width: 80%;
+	margin: 20px auto;
+	vertical-align: top;
+	text-align: center;
+	min-height: 450px;
+	background-color: #FFF;
+	border-radius: 7px;
+	justify-items: center;
+}
+
+#main-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: ". title ."
+						"pic1 pic2 pic3"
+						"table table table";
+	justify-items: center;
+	flex-wrap: wrap;
+}
+
+#title{
+	grid-area: title;
+}
+
+#pic1{
+	grid-area: pic1;
+}
+
+#pic2{
+	grid-area: pic2;
+}
+
+#pic3{
+	grid-area: pic3;
+}
+
+#table-mini{
+	background-color: palegreen;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: "name name name"
+						". . ."
+						"rating . ingredients"
+}
+
+#name{
+	grid-area: name;
+}
+#rating{
+	grid-area: rating;
+}
+
+#ingredients{
+	grid-area: ingredients;
+}
+
+#table{
+	grid-area: table;
+}
+
+#tiles{
+	grid-area: table;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 30px;
+}
+
+.starsTiles{
+	width: 80%;
+	align-items: center;
+}
+
+tr:nth-child(odd){
+	background-color: lightgray;
+}
+
+.stars{
+	width: 40%;
+}
