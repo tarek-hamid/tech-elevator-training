@@ -14,9 +14,9 @@ The overall goal of the program was becoming familiar and proficient in all laye
 # Work #
 For every section in every module, the work I completed should be under the student-exercises folder. 
 
-Every other week of the program involved a more intensive pair programming assignment; pair work is located in folders were 'pair' is indicated in the title. 
+Every other week or so of the program involved a more intensive pair programming assignment; pair work is located in folders where 'pair' is indicated in the title. 
 
-After every module, teams of two-three developed capstone projects that tested the material of the module; capstone work is located in folders where 'capstone' is indicated in the title. 
+After every module, teams of 2-3 developed capstone projects that tested the material of the module; capstone work is located in folders where 'capstone' is indicated in the title. 
 
  # Final Capstone
  The final capstone project was a four person project to develop a website given requirements from a program manager. I worked on a team to develop a website that took in information about breweries from users and displayed those breweries, took information about beers in those breweries from users and displayed those beers, and allowed other users to review beers in that brewery. This project can be found under the 'java-blue-capstone-final-team-5' folder. 
